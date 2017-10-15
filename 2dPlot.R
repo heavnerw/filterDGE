@@ -4,9 +4,9 @@ library("graphics")
 library("ggplot2")
 library("rJava")
 
-setwd("~/Documents/Results/ul_v_dl/e13_v_e17/ATAC/filtered/")
+setwd("")
 
-d2=read.table("e17Only_binomialTest_foldChange.txt", sep="\t", col.names=c("gene", "binomial_pVal", "qVal", "log2_foldChange"), stringsAsFactors=F)
+d2=read.table("_binomialTest_foldChange.txt", sep="\t", col.names=c("gene", "binomial_pVal", "qVal", "log2_foldChange"), stringsAsFactors=F)
 str(d2)
 
 plot(d2$log2_foldChange, -log(d2$binomial_pVal), main="ATACseq v RNAseq", xlab="Sleuth log2(fold change)", ylab="-log(ATACseq binomial pValue)", pch=19)
