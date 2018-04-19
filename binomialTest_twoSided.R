@@ -10,7 +10,7 @@ d1=read.table("test.txt", sep="\t", col.names=c("gene", "size", "peaks", "probab
 str(d1)
 
 test <- function(x, n, p) {binom.test(x, n, p, alternative="two.sided")}
-counts <- mapply(test, d1$peaks, 6068, d1$probability)
+counts <- mapply(test, d1$peaks, n_trials, d1$probability)
 str(counts)
 
 counts %>% write.table(file="counts.txt")
